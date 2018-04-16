@@ -1,0 +1,11 @@
+<mat-form-field>
+  <input matInput [placeholder]="getLabel()" (focus)="onFocus()" (blur)="onBlur()" [matAutocomplete]="auto" [formControl]="control">
+  <mat-autocomplete #auto="matAutocomplete">
+    <mat-option *ngFor="let data of filteredData | async" [value]="data[filterColumnName]">
+      <div [innerHTML]="getTemplate(data)"></div>
+    </mat-option>
+  </mat-autocomplete>
+  <button mat-button *ngIf="showClear" matSuffix mat-icon-button aria-label="Clear" (click)="clear()">
+    <mat-icon>close</mat-icon>
+  </button>
+</mat-form-field>
