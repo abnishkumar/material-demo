@@ -14,7 +14,7 @@ export class AppComponent implements OnInit {
 
   group: FormGroup;
   data: State[];
-  telType = '';
+  textBoxType = '';
   template = `<img style="vertical-align:middle;" aria-hidden src="{flag}" height="25" />
 <span>{name}</span> |
 <small>Population: {population}</small>`;
@@ -23,7 +23,7 @@ export class AppComponent implements OnInit {
    *
    */
   constructor(private fb: FormBuilder) {
-    this.telType = TextBoxType.telephone;
+    this.textBoxType = TextBoxType.telephone;
     this.data = dataSource;
 
     this.group = this.fb.group({
