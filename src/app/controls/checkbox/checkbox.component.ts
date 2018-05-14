@@ -8,7 +8,7 @@ import { BaseControls } from '../base.controls';
 })
 export class NgsCheckboxComponent extends BaseControls implements OnInit {
 
-  @Input() labelPosition = 'after';
+
   @Input() indeterminate: boolean;
 
   constructor() {

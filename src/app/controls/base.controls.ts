@@ -5,6 +5,9 @@ export class BaseControls {
   @Input() public control: FormControl;
   @Input() public label: string;
   @Input() public allowClear = true;
+  // Theme color palette for the component.
+  @Input() public color = 'primary';
+  @Input() labelPosition = 'after';
   showClear: boolean;
 
   constructor() {

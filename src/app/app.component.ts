@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators, FormGroup, FormBuilder } from '@angular/forms';
-import { dataSource } from './controls/data';
+
 import { TextBoxType } from './controls/controls.module';
-import { State } from './controls/state.model';
+import { State } from './state.model';
+import { dataSource } from './data';
+
 
 @Component({
   selector: 'app-root',
@@ -32,7 +34,8 @@ export class AppComponent implements OnInit {
       emailFormCtrl: new FormControl('', [Validators.required, Validators.email]),
       telPhoneCtrl: new FormControl('', [Validators.required]),
       chkCtrl: new FormControl(),
-      dateCtrl: new FormControl()
+      dateCtrl: new FormControl(),
+      slideCtrl: new FormControl()
     });
   }
 

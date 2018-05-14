@@ -5,7 +5,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { NgsAutocompleteComponent } from './autocomplete/autocomplete.component';
 import { NgsCheckboxComponent } from './checkbox/checkbox.component';
+import { NgsDatePickerComponent } from './datepicker/datepicker.component';
 import { NgsTextboxComponent } from './textbox/textbox.component';
+import { NgsSlideToggleComponent } from './slide-toggle/slide-toggle.component';
 import {
   MatAutocompleteModule,
   MatButtonModule,
@@ -40,7 +42,6 @@ import {
   MatToolbarModule,
   MatTooltipModule,
 } from '@angular/material';
-import { NgsDatePickerComponent } from './datepicker/datepicker.component';
 
 @NgModule({
   imports: [
@@ -83,9 +84,12 @@ import { NgsDatePickerComponent } from './datepicker/datepicker.component';
     MatTooltipModule,
     BrowserAnimationsModule
   ],
-  declarations: [NgsAutocompleteComponent, NgsTextboxComponent, NgsCheckboxComponent, NgsDatePickerComponent],
+  declarations: [
+    NgsAutocompleteComponent, NgsTextboxComponent,
+    NgsCheckboxComponent, NgsDatePickerComponent,
+    NgsSlideToggleComponent],
   exports: [
-    NgsAutocompleteComponent, NgsTextboxComponent, NgsCheckboxComponent, NgsDatePickerComponent
+    NgsAutocompleteComponent, NgsTextboxComponent, NgsCheckboxComponent, NgsDatePickerComponent, NgsSlideToggleComponent
   ]
 })
 export class ControlsModule { }
@@ -94,3 +98,4 @@ export * from './textbox/model/textbox.settings.model';
 export { NgsAutocompleteComponent } from './autocomplete/autocomplete.component';
 export { NgsCheckboxComponent } from './checkbox/checkbox.component';
 export { NgsTextboxComponent } from './textbox/textbox.component';
+export { NgsSlideToggleComponent } from './slide-toggle/slide-toggle.component';
