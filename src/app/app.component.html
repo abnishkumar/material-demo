@@ -1,15 +1,15 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div>
   <p> AutoComplete </p>
-  <ngs-autocomplete [control]="autoCtrl" [template]="template" label="State" [data]="data" filterColumnName="name"></ngs-autocomplete>
+  <ngs-autocomplete [control]="group.controls.autoCtrl" [template]="template" label="State" [data]="data" filterColumnName="name"></ngs-autocomplete>
   <p>TextBox</p>
-  <ngs-textbox label="TextBox" [control]="textboxCtrl"></ngs-textbox>
+  <ngs-textbox label="TextBox" [control]="group.controls.textboxCtrl"></ngs-textbox>
   <p>Email</p>
-  <ngs-textbox label="Email" [control]="emailFormCtrl"></ngs-textbox>
+  <ngs-textbox label="Email" [control]="group.controls.emailFormCtrl"></ngs-textbox>
   <p>Telephone</p>
-  <ngs-textbox [type]="telType" label="Telephone" [control]="telPhoneCtrl" inputPrefix="+91"></ngs-textbox>
+  <ngs-textbox [type]="telType" label="Telephone" [control]="group.controls.telPhoneCtrl" inputPrefix="+91"></ngs-textbox>
   <p> CheckBox</p>
-  <ngs-checkbox label="CheckBox Display" [control]="chkCtrl"></ngs-checkbox>
+  <ngs-checkbox label="CheckBox Display" [control]="group.controls.chkCtrl"></ngs-checkbox>
   <p>Date Picker</p>
-  <ngs-datepicker label="Choose a date" [control]="dateCtrl"></ngs-datepicker>
+  <ngs-datepicker label="Choose a date" [control]="group.controls.dateCtrl"></ngs-datepicker>
 </div>
