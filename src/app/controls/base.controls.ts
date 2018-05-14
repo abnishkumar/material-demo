@@ -23,7 +23,7 @@ export class BaseControls {
     if (this.allowClear) {
       setTimeout(() => {
         this.showClear = false;
-      }, 150);
+      }, 200);
     }
   }
 
