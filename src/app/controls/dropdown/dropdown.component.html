@@ -1,0 +1,5 @@
+<mat-form-field>
+  <mat-select [placeholder]="getLabel()" [formControl]="control" (blur)="onBlur()" (select)="onItemSelect($event)" (change)="onChange($event)">
+    <mat-option *ngFor="let data of dataSource" [value]="data">{{data}}</mat-option>
+  </mat-select>
+</mat-form-field>

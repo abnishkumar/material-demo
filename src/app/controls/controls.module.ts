@@ -8,6 +8,7 @@ import { NgsCheckboxComponent } from './checkbox/checkbox.component';
 import { NgsDatePickerComponent } from './datepicker/datepicker.component';
 import { NgsTextboxComponent } from './textbox/textbox.component';
 import { NgsSlideToggleComponent } from './slide-toggle/slide-toggle.component';
+import { NgsDropDownComponent } from './dropdown/dropdown.component';
 import {
   MatAutocompleteModule,
   MatButtonModule,
@@ -25,6 +26,7 @@ import {
   MatListModule,
   MatMenuModule,
   MatNativeDateModule,
+  MatOptionModule,
   MatPaginatorModule,
   MatProgressBarModule,
   MatProgressSpinnerModule,
@@ -43,20 +45,21 @@ import {
   MatTooltipModule,
 } from '@angular/material';
 
+
+
 @NgModule({
   imports: [
     CommonModule,
-    MatAutocompleteModule,
     FormsModule,
     ReactiveFormsModule,
     CdkTableModule,
+
     MatAutocompleteModule,
     MatButtonModule,
     MatButtonToggleModule,
     MatCardModule,
     MatCheckboxModule,
     MatChipsModule,
-    MatStepperModule,
     MatDatepickerModule,
     MatDialogModule,
     MatDividerModule,
@@ -67,6 +70,7 @@ import {
     MatListModule,
     MatMenuModule,
     MatNativeDateModule,
+    MatOptionModule,
     MatPaginatorModule,
     MatProgressBarModule,
     MatProgressSpinnerModule,
@@ -78,19 +82,18 @@ import {
     MatSlideToggleModule,
     MatSnackBarModule,
     MatSortModule,
+    MatStepperModule,
     MatTableModule,
     MatTabsModule,
     MatToolbarModule,
     MatTooltipModule,
-    BrowserAnimationsModule
   ],
   declarations: [
-    NgsAutocompleteComponent, NgsTextboxComponent,
-    NgsCheckboxComponent, NgsDatePickerComponent,
-    NgsSlideToggleComponent],
+    NgsAutocompleteComponent, NgsTextboxComponent, NgsCheckboxComponent,
+    NgsDatePickerComponent, NgsSlideToggleComponent, NgsDropDownComponent],
   exports: [
-    NgsAutocompleteComponent, NgsTextboxComponent, NgsCheckboxComponent, NgsDatePickerComponent, NgsSlideToggleComponent
-  ]
+    NgsAutocompleteComponent, NgsTextboxComponent, NgsCheckboxComponent,
+    NgsDatePickerComponent, NgsSlideToggleComponent, NgsDropDownComponent]
 })
 export class ControlsModule { }
 
@@ -99,3 +102,4 @@ export { NgsAutocompleteComponent } from './autocomplete/autocomplete.component'
 export { NgsCheckboxComponent } from './checkbox/checkbox.component';
 export { NgsTextboxComponent } from './textbox/textbox.component';
 export { NgsSlideToggleComponent } from './slide-toggle/slide-toggle.component';
+export { NgsDropDownComponent } from './dropdown/dropdown.component';

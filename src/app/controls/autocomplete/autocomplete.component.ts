@@ -12,7 +12,6 @@ import { BaseControls } from '../base.controls';
 
 export class NgsAutocompleteComponent extends BaseControls implements OnInit {
 
-  @Input() public data: any;
   @Input() public filterColumnName: string;
   @Input() public template: string;
   filteredData: Observable<any[]>;
@@ -37,12 +36,12 @@ export class NgsAutocompleteComponent extends BaseControls implements OnInit {
     this.filteredData = this.control.valueChanges
       .pipe(
         startWith(''),
-        map(val => val ? this.filterData(val) : this.data.slice())
+        map(val => val ? this.filterData(val) : this.dataSource.slice())
       );
   }
 
   private filterData(val: string) {
-    return this.data.filter(
+    return this.dataSource.filter(
       fData => fData[this.filterColumnName].toLowerCase().indexOf(val.toLowerCase()) !== -1);
   }
 

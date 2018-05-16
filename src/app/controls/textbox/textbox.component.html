@@ -1,6 +1,6 @@
 <mat-form-field>
   <span *ngIf="inputPrefix" matPrefix>{{inputPrefix}} &nbsp;</span>
-  <input [type]="type" matInput [formControl]="control" [placeholder]="getLabel()" (focus)="onFocus()"
+  <input [type]="type" matInput [formControl]="control" maxlength="5" [placeholder]="getLabel()" (focus)="onFocus()"
     (blur)="onBlur()">
   <button mat-button *ngIf="showClear" matSuffix mat-icon-button aria-label="Clear" (click)="clear()">
     <mat-icon>close</mat-icon>

@@ -2,9 +2,11 @@ import { FormControl, ValidatorFn, ValidationErrors, AbstractControl } from '@an
 import { Input } from '@angular/core';
 
 export class BaseControls {
+
   @Input() public control: FormControl;
   @Input() public label: string;
   @Input() public allowClear = true;
+  @Input() public dataSource: any;
   // Theme color palette for the component.
   @Input() public color = 'primary';
   @Input() labelPosition = 'after';
