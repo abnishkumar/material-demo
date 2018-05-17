@@ -1,5 +1,26 @@
-<mat-form-field>
-  <mat-select [placeholder]="getLabel()" [formControl]="control" (blur)="onBlur()" (select)="onItemSelect($event)" (change)="onChange($event)">
-    <mat-option *ngFor="let data of dataSource" [value]="data">{{data}}</mat-option>
-  </mat-select>
-</mat-form-field>
+<div *ngIf="!groupOption">
+  <mat-form-field>
+    <mat-select [placeholder]="getLabel()" [formControl]="control" (blur)="onBlur()" [multiple]="multipleSelection" (select)="onItemSelect($event)"
+      (change)="onChange($event)">
+      <mat-option *ngIf="defaultOption">{{defaultOption}}</mat-option>
+      <!-- <mat-option *ngFor="let data of dataSource" [value]="data">{{data}}</mat-option> -->
+      <mat-option *ngFor="let option of dataSource" [value]="option.value">
+          {{ option.text }}
+        </mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>
+
+<div *ngIf="groupOption">
+  <mat-form-field>
+    <mat-select [placeholder]="getLabel()"  [formControl]="control" (blur)="onBlur()" [multiple]="multipleSelection" (select)="onItemSelect($event)"
+      (change)="onChange($event)">
+      <mat-option *ngIf="defaultOption">{{defaultOption}}</mat-option>
+      <mat-optgroup *ngFor="let group of dataSource" [label]="group.name" [disabled]="group.disabled">
+        <mat-option *ngFor="let option of group.dropDownOption" [value]="option.value">
+          {{ option.text }}
+        </mat-option>
+      </mat-optgroup>
+    </mat-select>
+  </mat-form-field>
+</div>

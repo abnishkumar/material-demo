@@ -103,3 +103,4 @@ export { NgsCheckboxComponent } from './checkbox/checkbox.component';
 export { NgsTextboxComponent } from './textbox/textbox.component';
 export { NgsSlideToggleComponent } from './slide-toggle/slide-toggle.component';
 export { NgsDropDownComponent } from './dropdown/dropdown.component';
+export * from './dropdown/model/deropdown.model';

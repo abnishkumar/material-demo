@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators, FormGroup, FormBuilder } from '@angular/forms';
 
-import { TextBoxType } from './controls/controls.module';
+import { TextBoxType, DropDownGroups, DropDownOption } from './controls/controls.module';
 import { State } from './state.model';
 import { dataSource } from './data';
 import { OverlayContainer } from '@angular/cdk/overlay';
@@ -15,15 +15,59 @@ import { OverlayContainer } from '@angular/cdk/overlay';
 
 export class AppComponent implements OnInit {
 
-  theme = 'my-dark-theme';
+  theme = 'my-theme';
   group: FormGroup;
-  themeList = ['my-light-theme', 'my-dark-theme', 'my-theme'];
+
   data: State[];
   textBoxType = '';
   template = `<img style="vertical-align:middle;" aria-hidden src="{flag}" height="25" />
 <span>{name}</span> |
 <small>Population: {population}</small>`;
   title = 'app';
+
+  // drop-down data-source
+  themeList: DropDownOption[] = [
+    { value: 'my-light-theme', text: 'my-light-theme' },
+    { value: 'my-dark-theme', text: 'my-dark-theme' },
+    { value: 'my-theme', text: 'my-theme' }
+  ];
+  // group drop-down data-source
+  dropDownWithGroups: DropDownGroups[] = [
+    {
+      name: 'Grass',
+      dropDownOption: [
+        { value: 'bulbasaur-0', text: 'Bulbasaur' },
+        { value: 'oddish-1', text: 'Oddish' },
+        { value: 'bellsprout-2', text: 'Bellsprout' }
+      ]
+    },
+    {
+      name: 'Water',
+      dropDownOption: [
+        { value: 'squirtle-3', text: 'Squirtle' },
+        { value: 'psyduck-4', text: 'Psyduck' },
+        { value: 'horsea-5', text: 'Horsea' }
+      ]
+    },
+    {
+      name: 'Fire',
+      disabled: true,
+      dropDownOption: [
+        { value: 'charmander-6', text: 'Charmander' },
+        { value: 'vulpix-7', text: 'Vulpix' },
+        { value: 'flareon-8', text: 'Flareon' }
+      ]
+    },
+    {
+      name: 'Psychic',
+      dropDownOption: [
+        { value: 'mew-9', text: 'Mew' },
+        { value: 'mewtwo-10', text: 'Mewtwo' },
+      ]
+    }
+  ];
+
+
   /**
    *
    */
@@ -39,7 +83,8 @@ export class AppComponent implements OnInit {
       chkCtrl: new FormControl(),
       dateCtrl: new FormControl(),
       slideCtrl: new FormControl(),
-      dropDownCtrl: new FormControl()
+      dropDownCtrl: new FormControl(),
+      dropDownGroupCtrl: new FormControl()
     });
   }
 
@@ -50,6 +95,7 @@ export class AppComponent implements OnInit {
   }
   onChange(data) {
     this.theme = data.value;
+    // override old theme class and add new theme class
     this.overlayContainer['themeClass'] = this.theme;
   }
 }

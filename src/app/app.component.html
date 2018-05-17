@@ -1,12 +1,14 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div [class]="theme">
-
   <mat-card>
     <ngs-dropdown label="Theme" (change)="onChange($event)" [control]="group.controls.dropDownCtrl" [dataSource]="themeList"></ngs-dropdown>
-  </mat-card>
 
-  <p> AutoComplete </p>
-  <ngs-autocomplete [control]="group.controls.autoCtrl" [template]="template" label="State" [dataSource]="data" filterColumnName="name"></ngs-autocomplete>
+  <p>Group Dropdown</p>
+  <ngs-dropdown label="DropDown with Group" [multipleSelection]="true" defaultOption="--None--" [groupOption]="true" [control]="group.controls.dropDownGroupCtrl"
+    [dataSource]="dropDownWithGroups"></ngs-dropdown>
+  <p>Auto Complete</p>
+  <ngs-autocomplete [control]="group.controls.autoCtrl" [template]="template" label="AutoComplete State" [dataSource]="data"
+    filterColumnName="name"></ngs-autocomplete>
 
   <p>TextBox</p>
   <ngs-textbox label="TextBox" [control]="group.controls.textboxCtrl"></ngs-textbox>
@@ -20,5 +22,5 @@
   <ngs-datepicker label="Choose a date" [control]="group.controls.dateCtrl"></ngs-datepicker>
   <p>Slide Toggle</p>
   <ngs-slide-toggle label="Slide me!"></ngs-slide-toggle>
-
+</mat-card>
 </div>

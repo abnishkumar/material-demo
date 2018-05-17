@@ -8,11 +8,13 @@ import { BaseControls } from '../base.controls';
 })
 export class NgsDropDownComponent extends BaseControls implements OnInit {
 
-  @Input() public multipleCheckBox = false;
-
+  @Input() public multipleSelection = false;
+  @Input() public groupOption = false;
+  @Input() public defaultOption :string;
   @Output() public onItemSelection: EventEmitter<any> = new EventEmitter<any>();
   @Output() public change: EventEmitter<any> = new EventEmitter<any>();
 
+  // MatOption
   constructor() {
     super();
   }
